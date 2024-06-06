@@ -7,10 +7,8 @@
 <script>
 
 const logout = async (e) => {
-  let logout_url = window.location.origin+"/djangoapp/logout/";
-  console.log(logout_url);
-  const res = await fetch(logout_url);
-  console.log(logout_url);
+  let logout_url = window.location.origin+"/djangoapp/logout";
+  const res = await fetch(logout_url).catch((e)=>{console.log(e)});
 
   const json = await res.json();
   if (json) {
