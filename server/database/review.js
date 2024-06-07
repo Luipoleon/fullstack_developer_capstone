@@ -1,4 +1,4 @@
-use 'esversion: 6'
+use 'esversion: 6';
 
 const mongoose = require('mongoose');
 
