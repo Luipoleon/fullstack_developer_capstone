@@ -1,10 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
-from django.contrib.auth.models import User
+from django.http import JsonResponse
 from django.contrib.auth import logout, login, authenticate
-from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-from datetime import datetime
 import logging
 import json
 from .models import CarMake, CarModel
@@ -12,6 +8,7 @@ from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
 
 logger = logging.getLogger(__name__)
+
 
 def get_cars(request):
     count = CarMake.objects.filter().count()
